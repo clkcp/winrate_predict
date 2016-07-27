@@ -9,6 +9,7 @@ class MainHandler(tornado.web.RequestHandler):
 def make_app():
     return tornado.web.Application([
         (r"/predict",handler.WinRatePredictHandler),
+        (r"/",MainHandler),
         ])
 
 

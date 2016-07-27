@@ -1,3 +1,5 @@
 class PredictModel():
     def predict(self, heros):
-        return 1.0
+        ## hard code here
+        ## need a predict model
+        return 0.233
