@@ -1,4 +1,13 @@
 import numpy as np
+import json
+import re
+import numpy as np
+import scipy as sp
+import pickle
+from sklearn import cross_validation
+from sklearn import svm
+from sklearn.decomposition import PCA
+from sklearn.ensemble import RandomForestClassifier
 
 class Config():
     def __init__(self):
@@ -33,6 +42,7 @@ class Config():
         self.anti = anti
 
         self.model_path = "../data/svm_0.0.2"
-    
+        with open(self.model_path) as f:
+            self.clf = pickle.load(f)
 
 config = Config()

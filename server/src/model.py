@@ -8,6 +8,7 @@ from sklearn import svm
 from sklearn.decomposition import PCA
 from sklearn.ensemble import RandomForestClassifier
 from config import config
+import copy
 
 class PredictModel():
     def ca(self, a, b):
@@ -47,8 +48,7 @@ class PredictModel():
         ## hard code here
         ## need a predict model
         feat = self.get_feature(heros)
-        with open(config.model_path) as f:
-            clf = pickle.load(f)
+        clf = copy.deepcopy(config.clf)
         pre = clf.predict_proba(feat.reshape(1, -1))
         return pre[0][1]
 
